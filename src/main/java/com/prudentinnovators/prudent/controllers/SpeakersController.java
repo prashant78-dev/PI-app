@@ -40,10 +40,10 @@ public class SpeakersController {
     }
 
     @RequestMapping(value="{id}" , method = RequestMethod.PUT)
-    public Speaker update(@PathVariable Long id, @RequestBody final Session session){
+    public Speaker update(@PathVariable Long id, @RequestBody final Speaker speaker){
         //also need to check for children
         Speaker existingSpeaker = speakerRepository.getReferenceById(id);
-        BeanUtils.copyProperties(session,existingSpeaker,"speaker_id");
+        BeanUtils.copyProperties(speaker,existingSpeaker,"speaker_id");
         return speakerRepository.saveAndFlush(existingSpeaker);
     }
 
