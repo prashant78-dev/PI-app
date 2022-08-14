@@ -20,6 +20,20 @@ public class Questions_Answer {
     String option_1;
     String option_2;
 
+
+    String option_3		;
+    String option_4;
+    String question_type;
+
+    @JsonFormat(pattern="dd-MM-yyyy")
+    Date creation_date;
+    @JsonFormat(pattern="dd-MM-yyyy")
+    Date last_modified_date ;
+
+    String lesson;
+    String level;
+    String description ;
+
     public Long getQ_id() {
         return q_id;
     }
@@ -113,17 +127,5 @@ public class Questions_Answer {
         this.description = description;
     }
 
-    String option_3		;
-    String option_4;
-    String question_type;
-
-    @JsonFormat(pattern="dd-MM-yyyy")
-    Date creation_date;
-    @JsonFormat(pattern="dd-MM-yyyy")
-    Date last_modified_date ;
-
-    String lesson;
-    String level;
-    String description ;
 
 }
