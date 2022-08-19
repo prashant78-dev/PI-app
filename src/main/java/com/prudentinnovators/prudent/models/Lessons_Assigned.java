@@ -19,18 +19,33 @@ public class Lessons_Assigned {
 
     private String lesson ;
     private String level  ;
-    private String user_id ;
 
+    private String assigneduser;
+    private String user_id ;
     @JsonFormat(pattern="dd-MM-yyyy")
     private Date creation_date ;
+
     @JsonFormat(pattern="dd-MM-yyyy")
     private Date last_modified_date;
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     private String status ;
 
     public Long getId() {
         return id;
     }
 
+
+    public String getAssigneduser() {
+        return assigneduser;
+    }
+
+    public void setAssigneduser(String assigneduser) {
+        this.assigneduser = assigneduser;
+    }
 
     public String getLesson() {
         return lesson;
@@ -76,9 +91,7 @@ public class Lessons_Assigned {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+
 
 
 

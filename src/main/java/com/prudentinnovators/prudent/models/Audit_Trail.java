@@ -2,11 +2,9 @@ package com.prudentinnovators.prudent.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "audit_trail")
@@ -21,7 +19,10 @@ public class Audit_Trail {
     private String level;
     private String user_id;
     Long q_id;
-    Boolean isCorrect;
+
+
+
+    String isCorrect;
     @JsonFormat(pattern="dd-MM-yyyy")
     Date creation_date;
 
@@ -64,12 +65,12 @@ public class Audit_Trail {
         this.q_id = q_id;
     }
 
-    public Boolean isCorrect() {
+    public String isCorrect() {
         return isCorrect;
     }
 
-    public void setCorrect(Boolean correct) {
-        isCorrect = correct;
+    public void setCorrect(String isCorrect) {
+        this.isCorrect = isCorrect;
     }
 
     public Date getDate() {

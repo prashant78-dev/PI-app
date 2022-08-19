@@ -21,10 +21,11 @@ public class SessionsController {
     }
 
     @GetMapping
-    @RequestMapping("{id}")
+    @RequestMapping("{assigned_user_id}")
     public Session get(@PathVariable Long id){
         return sessionRepository.getReferenceById(id);
     }
+
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
